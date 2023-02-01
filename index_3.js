@@ -10,14 +10,14 @@ fs.readFile('./text.txt', 'utf8', (err, data) => {
     setImmediate(() => {
       console.log('I setImmediate read', performance.now());
     });
-    Promise.resolve(() => {
+    Promise.resolve().then(() => {
       console.log('J Promise', performance.now());
     });
 });
 
 setTimeout(() => {
   console.log('C setTimeout', performance.now());
-  Promise.resolve(() => {
+  Promise.resolve().then(() => {
     console.log('K Promise', performance.now());
   });
 });
@@ -32,7 +32,7 @@ setTimeout(() => {
 
 setImmediate(() => {
   console.log('F setImmediate', performance.now());
-  Promise.resolve(() => {
+  Promise.resolve().then(() => {
     console.log('J Promise', performance.now());
   });
 });

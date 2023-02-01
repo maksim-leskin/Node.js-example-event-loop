@@ -1,7 +1,7 @@
 const fs = require('node:fs');
 
 fs.readFile('./text.txt', 'utf8', (err, data) => {
-    console.log('A readFile', performance.now());
+  console.log('A readFile', performance.now());
 });
 
 setTimeout(() => {
